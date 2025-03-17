@@ -24,9 +24,9 @@ spring:
       request-timeout: 600000
 
   datasource:
-    url: jdbc:mysql:///aigc_platform?rewriteBatchedStatements=true&useServerPrepStmts=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: 123456
+    url: jdbc:mysql://172.31.178.43/aigc_platform2?rewriteBatchedStatements=true&useServerPrepStmts=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: jawhiow
+    password: jawhiow
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis-plus:
