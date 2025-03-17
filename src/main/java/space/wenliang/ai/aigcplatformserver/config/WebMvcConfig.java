@@ -11,7 +11,6 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.web.client.RestClient;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.socket.client.ReactorNettyWebSocketClient;
@@ -35,13 +34,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(new SingleValueParamHandlerMethodArgumentResolver());
         WebMvcConfigurer.super.addArgumentResolvers(argumentResolvers);
-    }
-
-
-    @Bean
-    public RestTemplate restTemplate(ClientHttpRequestFactory factory) {
-        return new RestTemplate(factory);
-
     }
 
     @Bean
@@ -81,7 +73,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
                     configurer.defaultCodecs().maxInMemorySize(10 * 1024 * 1024);  // 设置最大缓冲区为 10MB
                 })
                 .build();
-
     }
 
     @Bean
